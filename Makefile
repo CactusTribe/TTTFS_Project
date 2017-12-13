@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -std=gnu99 -Og
+CFLAGS = -Wall -std=gnu99
 
 SRC_PATH = src/
 HEADER_PATH = header/
@@ -43,10 +43,10 @@ clean:
 	rm -rf $(BIN_PATH)*.o
 
 tar: mrproper
-	tar cf TTTFS_Project.tar Makefile bin/ src/ header/ _INSTALL.sh _REMOVE.sh
+	tar zcf TTTFS_Lefranc_Skoda_Vic_Diallo.tar.gz Makefile bin/ src/ header/ Rapport/ Rapport.pdf _INSTALL.sh _REMOVE.sh
 	
 mrproper: clean
-	rm -rf $(BIN_PATH)tfs_create $(BIN_PATH)tfs_partition $(BIN_PATH)tfs_analyze $(BIN_PATH)tfs_format $(BIN_PATH)libll.so $(BIN_PATH)libtfs.so
+	rm -rf $(BIN_PATH)tfs_create $(BIN_PATH)tfs_partition $(BIN_PATH)tfs_analyze $(BIN_PATH)tfs_format $(BIN_PATH)tfs_mkdir $(BIN_PATH)libll.so $(BIN_PATH)libtfs.so
 
 install:
 	sudo ./_INSTALL.sh

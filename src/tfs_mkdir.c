@@ -171,6 +171,8 @@ error add_new_dir(uint32_t partition, char * nom, uint32_t parent_file_pos)
 	writeDirEntryToBlock(new_block, 1, double_dot);
 
 	write_block(0, new_block, (first_partition_blck + new_file.tfs_direct[0]) );
+
+	return _NOERROR;
 }
 
 
@@ -182,8 +184,8 @@ int main(int argc, char *argv[])
 	char tfs_location[240]= "";
 	uint32_t first_partition_blck = 0;
 	PARTITION_INFO infPartition;
-	DIR_ENTRY dir_ent;
-	FILE_ENTRY file_ent;
+	//DIR_ENTRY dir_ent;
+	//FILE_ENTRY file_ent;
 	error err;
 	int file_pos= 0;
 
@@ -241,7 +243,7 @@ int main(int argc, char *argv[])
 	FILE_ENTRY  parent_file;
 	block 			parent_block;
 	uint32_t 		parent_file_number=0;
-	FILE_ENTRY  file_entry;
+	//FILE_ENTRY  file_entry;
 
 
 
